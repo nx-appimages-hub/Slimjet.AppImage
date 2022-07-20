@@ -18,7 +18,9 @@ all: clean init
 	mkdir --parents $(PWD)/build/Boilerplate.AppDir/slimjet
 	$(PWD)/bin/Apprepo.AppImage --destination=$(PWD)/build appdir boilerplate \
 	    libgdk-pixbuf2.0-0 libatk1.0-0 libatk-bridge2.0-0 libgtk2.0-0 \
-	    libreadline8 at-spi2-core libpango-1.0-0 libselinux1
+	    libreadline8 at-spi2-core libpango-1.0-0 libselinux1 \
+	    libgtk-3-0 libwayland-cursor0
+
 
 	wget --output-document=$(PWD)/build/build.deb "https://www.slimjet.com/download.php?version=lnx64&type=deb&beta=&server="
 	dpkg -x $(PWD)/build/build.deb $(PWD)/build
